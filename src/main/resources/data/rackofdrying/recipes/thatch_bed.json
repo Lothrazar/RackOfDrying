@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TT",
+    "PP"
+  ],
+  "key": {
+    "T": { "item": "rackofdrying:thatch" },
+    "P": { "tag": "minecraft:planks" }
+  },
+  "result": {
+    "item": "rackofdrying:thatch_bed",
+    "count": 1
+  }
+}

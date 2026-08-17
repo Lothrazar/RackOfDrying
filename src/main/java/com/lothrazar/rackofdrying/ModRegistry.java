@@ -3,6 +3,7 @@ package com.lothrazar.rackofdrying;
 import com.lothrazar.rackofdrying.block.BlockDryingRack;
 import com.lothrazar.rackofdrying.block.BlockEntityDryingRack;
 import com.lothrazar.rackofdrying.block.BlockThatch;
+import com.lothrazar.rackofdrying.block.BlockThatchBed;
 import com.lothrazar.rackofdrying.block.BlockThatchSlab;
 import com.lothrazar.rackofdrying.block.BlockThatchStairs;
 import com.lothrazar.rackofdrying.block.BlockThatchWall;
@@ -75,4 +76,8 @@ public class ModRegistry {
   public static final RegistryObject<Item> ITHATCH_SLAB = ITEMS.register("thatch_slab", () -> new BlockItem(THATCH_SLAB.get(), new Item.Properties()));
   public static final RegistryObject<Block> THATCH_WALL = BLOCKS.register("thatch_wall", () -> new BlockThatchWall(Block.Properties.copy(THATCH.get())));
   public static final RegistryObject<Item> ITHATCH_WALL = ITEMS.register("thatch_wall", () -> new BlockItem(THATCH_WALL.get(), new Item.Properties()));
+  //not instabreak like the rest of the thatch family - matches vanilla bed hardness/hitbox/sleep behavior
+  public static final RegistryObject<Block> THATCH_BED =
+      BLOCKS.register("thatch_bed", () -> new BlockThatchBed(Block.Properties.of().sound(SoundType.GRASS).strength(0.2F).noOcclusion()));
+  public static final RegistryObject<Item> ITHATCH_BED = ITEMS.register("thatch_bed", () -> new BlockItem(THATCH_BED.get(), new Item.Properties()));
 }

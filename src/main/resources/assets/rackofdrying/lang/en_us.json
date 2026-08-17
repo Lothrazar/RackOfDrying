@@ -4,6 +4,7 @@
   "block.rackofdrying.thatch_stairs": "Thatch Stairs",
   "block.rackofdrying.thatch_slab": "Thatch Slab",
   "block.rackofdrying.thatch_wall": "Thatch Wall",
+  "block.rackofdrying.thatch_bed": "Thatch Bed",
   "item.rackofdrying.jerky": "Jerky",
   "itemGroup.rackofdrying": "Rack Of Drying",
   "tooltip.rackofdrying.empty": "Empty",

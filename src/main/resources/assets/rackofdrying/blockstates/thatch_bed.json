@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "part=head": { "model": "rackofdrying:block/thatch_bed" },
+    "part=foot": { "model": "rackofdrying:block/thatch_bed" }
+  }
+}
