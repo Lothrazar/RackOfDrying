@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "tag": "forge:foods/fruits" },
+  "result": { "item": "rackofdrying:dried_fruit" },
+  "time": 120
+}

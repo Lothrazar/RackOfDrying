@@ -1,0 +1,11 @@
+
+#Mod settings
+[rackofdrying]
+	#If true, sleeping in a thatch bed sets your respawn point like a vanilla bed.
+	#If false, you can still sleep in it and skip the night, but it never changes your spawn point.
+	thatchBedSetsSpawn = true
+	#If true, hoppers/pipes can insert into and extract from the drying rack
+	#(extraction is still blocked while an item is actively drying). If false, the drying rack
+	#has no automation access at all and can only be used by hand.
+	allowAutomation = true
+

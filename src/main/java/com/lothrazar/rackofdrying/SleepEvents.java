@@ -7,14 +7,27 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BedPart;
+import net.minecraftforge.event.entity.player.PlayerSetSpawnEvent;
 import net.minecraftforge.event.level.SleepFinishedTimeEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = ModMain.MODID)
 public class SleepEvents {
+
+  //fires from ServerPlayer#setRespawnPosition before the position is actually applied (and before the
+  //"Respawn point set" message shows), so cancelling it here fully no-ops the spawn change for this one
+  //bed while leaving vanilla beds/respawn anchors/every other spawn-setting source untouched
+  @SubscribeEvent
+  public static void onSetSpawn(PlayerSetSpawnEvent event) {
+    BlockPos pos = event.getNewSpawn();
+    if (!ConfigManager.THATCH_BED_SET_SPAWN.get() && pos != null && event.getEntity().level().getBlockState(pos).getBlock() instanceof BlockThatchBed) {
+      event.setCanceled(true);
+    }
+  }
 
   //SleepFinishedTimeEvent only fires once the night has actually been slept through (respecting the
   //multiplayer sleep-percentage gamerule) - unlike PlayerWakeUpEvent, which also fires for players who
@@ -45,7 +58,13 @@ public class SleepEvents {
     BlockState state = level.getBlockState(pos);
     if (state.getBlock() instanceof BlockThatchBed) {
       level.levelEvent(null, 2001, pos, Block.getId(state));
-      level.removeBlock(pos, false);
+      //UPDATE_SUPPRESS_DROPS alone isn't enough: Level.setBlock strips that bit before it reaches the
+      //neighbor-shape cascade (confirmed by decompiling Level#markAndNotifyBlock - it masks flags with
+      //"& -34" before calling updateNeighbourShapes), so removing one half would still let BedBlock's
+      //own updateShape cascade auto-clear the other half WITH a drop. UPDATE_KNOWN_SHAPE skips that
+      //whole cascade block outright, which is what we actually want since we handle both halves
+      //ourselves right here.
+      level.setBlock(pos, Blocks.AIR.defaultBlockState(), Block.UPDATE_CLIENTS | Block.UPDATE_KNOWN_SHAPE);
     }
   }
 }

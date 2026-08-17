@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "tag": "forge:seeds" },
+  "result": { "item": "rackofdrying:dried_seeds" },
+  "time": 120
+}

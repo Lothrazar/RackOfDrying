@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "tag": "forge:foods/raw_meat" },
+  "result": { "item": "rackofdrying:dried_meat" },
+  "time": 120
+}

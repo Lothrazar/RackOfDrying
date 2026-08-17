@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "item": "minecraft:mud" },
+  "result": { "item": "minecraft:packed_mud" },
+  "time": 300
+}

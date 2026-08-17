@@ -62,13 +62,23 @@ public class ModRegistry {
     //empty, marker type
   });
   public static final RegistryObject<SerializeDryingRecipe> DRYING_RECIPE_SERIALIZER = RECIPE_SERIALIZERS.register("drying", SerializeDryingRecipe::new);
-  //2 food bars (4 nutrition, each drumstick icon = 2 nutrition)
-  private static final FoodProperties JERKY_FOOD = new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build();
-  public static final RegistryObject<Item> JERKY = ITEMS.register("jerky", () -> new Item(new Item.Properties().food(JERKY_FOOD)));
-  //instabreak like a flower, but solid so it can catch falls like a hay bale
-  public static final RegistryObject<Block> THATCH = BLOCKS.register("thatch", () -> new BlockThatch(Block.Properties.of().instabreak().sound(SoundType.GRASS)));
+
+  //id is "dried_meat" internally; the displayed/translated name is still "Jerky" (see lang file)
+  //.meat() has exactly one effect in vanilla: Wolf#isFood() checks it, so tamed wolves can be healed/bred on this
+  private static final FoodProperties DRIED_MEAT_FOOD = new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).meat().build();
+  public static final RegistryObject<Item> DRIED_MEAT = ITEMS.register("dried_meat", () -> new Item(new Item.Properties().food(DRIED_MEAT_FOOD)));
+  //same food values as dried_meat for now - tune separately once the recipe/balance for this is decided
+  private static final FoodProperties DRIED_FRUIT_FOOD = new FoodProperties.Builder().nutrition(4).saturationMod(0.1F).build();
+  public static final RegistryObject<Item> DRIED_FRUIT = ITEMS.register("dried_fruit", () -> new Item(new Item.Properties().food(DRIED_FRUIT_FOOD)));
+  //same placeholder food values as the other dried items - vanilla seeds aren't edible at all, so
+  //there's no existing balance to match here; tune separately once decided.
+  //  .fast() (same flag dried kelp uses) - quicker eat animation, fitting for something this small
+  private static final FoodProperties DRIED_SEEDS_FOOD = new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).fast().build();
+  public static final RegistryObject<Item> DRIED_SEEDS = ITEMS.register("dried_seeds", () -> new Item(new Item.Properties().food(DRIED_SEEDS_FOOD)));
+
+  public static final RegistryObject<Block> THATCH = BLOCKS.register("thatch", () -> new BlockThatch(Block.Properties.of().strength(0.5F).sound(SoundType.GRASS)));
   public static final RegistryObject<Item> ITHATCH = ITEMS.register("thatch", () -> new BlockItem(THATCH.get(), new Item.Properties()));
-  //stairs/slab/wall inherit thatch's instabreak + sound via Properties.copy
+  //stairs/slab/wall inherit thatch's hardness + sound via Properties.copy
   public static final RegistryObject<Block> THATCH_STAIRS =
       BLOCKS.register("thatch_stairs", () -> new BlockThatchStairs(THATCH.get().defaultBlockState(), Block.Properties.copy(THATCH.get())));
   public static final RegistryObject<Item> ITHATCH_STAIRS = ITEMS.register("thatch_stairs", () -> new BlockItem(THATCH_STAIRS.get(), new Item.Properties()));
@@ -76,7 +86,7 @@ public class ModRegistry {
   public static final RegistryObject<Item> ITHATCH_SLAB = ITEMS.register("thatch_slab", () -> new BlockItem(THATCH_SLAB.get(), new Item.Properties()));
   public static final RegistryObject<Block> THATCH_WALL = BLOCKS.register("thatch_wall", () -> new BlockThatchWall(Block.Properties.copy(THATCH.get())));
   public static final RegistryObject<Item> ITHATCH_WALL = ITEMS.register("thatch_wall", () -> new BlockItem(THATCH_WALL.get(), new Item.Properties()));
-  //not instabreak like the rest of the thatch family - matches vanilla bed hardness/hitbox/sleep behavior
+  // matches vanilla bed sleep
   public static final RegistryObject<Block> THATCH_BED =
       BLOCKS.register("thatch_bed", () -> new BlockThatchBed(Block.Properties.of().sound(SoundType.GRASS).strength(0.2F).noOcclusion()));
   public static final RegistryObject<Item> ITHATCH_BED = ITEMS.register("thatch_bed", () -> new BlockItem(THATCH_BED.get(), new Item.Properties()));

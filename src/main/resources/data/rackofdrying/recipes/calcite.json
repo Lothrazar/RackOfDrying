@@ -1,0 +1,7 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "item": "minecraft:tuff" },
+  "result": { "item": "minecraft:calcite" },
+  "time": 700
+}
+

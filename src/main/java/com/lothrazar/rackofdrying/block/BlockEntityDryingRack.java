@@ -59,8 +59,10 @@ public class BlockEntityDryingRack extends BlockEntity {
     updateProcessingState();
   }
 
-  //timer is synced to the client via the normal block entity update packet, so probe/waila mods
-  //reading these client-side (in appendTooltip/addProbeInfo) already see an up-to-date value
+  //NOT kept in sync with the client every tick - the block entity update packet only fires on
+  //inventory changes (see syncToClient()), not on every timer increment. TOP re-queries this live
+  //server-side on each probe request so it's unaffected; Jade instead reads it via its own
+  //IServerDataProvider hook (see RackWailaPlugin) rather than the client's stale cached copy.
   public int getTimer() {
     return timer;
   }

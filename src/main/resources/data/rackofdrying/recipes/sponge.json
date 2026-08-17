@@ -2,5 +2,5 @@
   "type": "rackofdrying:drying",
   "input": { "item": "minecraft:wet_sponge" },
   "result": { "item": "minecraft:sponge" },
-  "time": 200
+  "time": 60
 }
