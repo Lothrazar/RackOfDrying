@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "item": "minecraft:lime_concrete" },
+  "result": { "item": "minecraft:lime_concrete_powder" },
+  "time": 200
+}

@@ -1,0 +1,13 @@
+{
+  "block.rackofdrying.drying_rack": "Drying Rack",
+  "block.rackofdrying.thatch": "Thatch",
+  "block.rackofdrying.thatch_stairs": "Thatch Stairs",
+  "block.rackofdrying.thatch_slab": "Thatch Slab",
+  "block.rackofdrying.thatch_wall": "Thatch Wall",
+  "item.rackofdrying.jerky": "Jerky",
+  "itemGroup.rackofdrying": "Rack Of Drying",
+  "tooltip.rackofdrying.empty": "Empty",
+  "tooltip.rackofdrying.no_recipe": "Not drying (no matching recipe)",
+  "tooltip.rackofdrying.drying": "Drying: %s%%",
+  "config.jade.plugin_rackofdrying.drying_rack": "Drying Rack Progress"
+}

@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "item": "minecraft:hay_block" },
+  "result": { "item": "rackofdrying:thatch" },
+  "time": 200
+}

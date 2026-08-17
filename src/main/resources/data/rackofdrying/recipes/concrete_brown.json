@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "item": "minecraft:brown_concrete" },
+  "result": { "item": "minecraft:brown_concrete_powder" },
+  "time": 200
+}

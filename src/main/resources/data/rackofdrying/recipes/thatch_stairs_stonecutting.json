@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": { "item": "rackofdrying:thatch" },
+  "result": "rackofdrying:thatch_stairs",
+  "count": 1
+}

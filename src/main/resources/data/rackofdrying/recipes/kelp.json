@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "item": "minecraft:kelp" },
+  "result": { "item": "minecraft:dried_kelp" },
+  "time": 200
+}

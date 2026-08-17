@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BBB"
+  ],
+  "key": {
+    "B": { "item": "rackofdrying:thatch" }
+  },
+  "result": {
+    "item": "rackofdrying:thatch_wall",
+    "count": 6
+  }
+}

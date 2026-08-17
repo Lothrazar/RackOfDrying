@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "tag": "minecraft:saplings" },
+  "result": { "item": "minecraft:dead_bush" },
+  "time": 200
+}

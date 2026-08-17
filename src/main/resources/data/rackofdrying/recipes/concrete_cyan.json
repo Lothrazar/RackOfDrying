@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "item": "minecraft:cyan_concrete" },
+  "result": { "item": "minecraft:cyan_concrete_powder" },
+  "time": 200
+}

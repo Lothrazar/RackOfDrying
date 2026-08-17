@@ -1,0 +1,12 @@
+{
+  "type": "rackofdrying:drying",
+  "input": [
+    { "item": "minecraft:beef" },
+    { "item": "minecraft:porkchop" },
+    { "item": "minecraft:chicken" },
+    { "item": "minecraft:mutton" },
+    { "item": "minecraft:rabbit" }
+  ],
+  "result": { "item": "rackofdrying:jerky" },
+  "time": 200
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "rackofdrying:block/thatch",
+    "top": "rackofdrying:block/thatch",
+    "side": "rackofdrying:block/thatch"
+  }
+}

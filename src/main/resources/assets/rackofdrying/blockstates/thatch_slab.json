@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "rackofdrying:block/thatch_slab" },
+        "type=top": { "model": "rackofdrying:block/thatch_slab_top" },
+        "type=double": { "model": "rackofdrying:block/thatch" }
+    }
+}
