@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "item": "minecraft:brewing_stand" },
+  "result": { "item": "minecraft:blaze_rod"  },
+  "time": 2600
+}

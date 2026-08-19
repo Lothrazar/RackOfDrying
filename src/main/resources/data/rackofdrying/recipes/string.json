@@ -1,0 +1,7 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "tag": "minecraft:wool" },
+  "result": { "item": "minecraft:string" },
+  "time": 1600
+}
+

@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "item": "minecraft:honeycomb_block" },
+  "result": { "item": "minecraft:honeycomb", "count": 4  },
+  "time": 2600
+}

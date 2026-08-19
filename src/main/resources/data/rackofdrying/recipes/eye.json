@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "item": "minecraft:eye_of_ender" },
+  "result": { "item": "minecraft:ender_pearl" },
+  "time": 1200
+}

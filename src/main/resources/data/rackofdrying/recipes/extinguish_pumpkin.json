@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "item": "minecraft:jack_o_lantern" },
+  "result": { "item": "minecraft:carved_pumpkin"  },
+  "time": 1400
+}

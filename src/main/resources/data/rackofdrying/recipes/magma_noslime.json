@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "item": "minecraft:magma_cream" },
+  "result": { "item": "minecraft:blaze_powder" },
+  "time": 1200
+}

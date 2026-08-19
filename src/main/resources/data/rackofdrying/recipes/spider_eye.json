@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "item": "minecraft:fermented_spider_eye" },
+  "result": { "item": "minecraft:sugar" },
+  "time": 700
+}

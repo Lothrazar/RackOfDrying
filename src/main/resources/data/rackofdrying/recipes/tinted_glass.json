@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "item": "minecraft:tinted_glass" },
+  "result": { "item": "minecraft:amethyst_shard" },
+  "time": 1200
+}

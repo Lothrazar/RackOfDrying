@@ -10,6 +10,8 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -19,6 +21,10 @@ public class DryingRecipeCategory implements IRecipeCategory<DryingRecipe> {
 
   public static final ResourceLocation ID = new ResourceLocation(ModRegistry.DRYING_RECIPE_TYPE.getId().toString());
   public static final RecipeType<DryingRecipe> TYPE = new RecipeType<>(ID, DryingRecipe.class);
+  private static final int TICKS_PER_SECOND = 20;
+  //centered in the gap between the input slot (ends at x=22) and the output slot (starts at x=70)
+  private static final int TIME_LABEL_X = 46;
+  private static final int TIME_LABEL_Y = 6;
   private final IDrawable background;
   private final IDrawable icon;
 
@@ -51,7 +57,18 @@ public class DryingRecipeCategory implements IRecipeCategory<DryingRecipe> {
 
   @Override
   public void draw(DryingRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics ms, double mouseX, double mouseY) {
-    //blank background, nothing extra to draw
+    Font font = Minecraft.getInstance().font;
+    //white + drawCenteredString's built-in shadow reads clearly regardless of background shade,
+    //unlike the plain dark gray this started as
+    ms.drawCenteredString(font, formatSeconds(recipe.getDryTime()), TIME_LABEL_X, TIME_LABEL_Y, 0xFFFFFFFF);
+  }
+
+  //20 ticks/second - whole seconds print as "3s", anything else falls back to one decimal like "2.5s"
+  private static String formatSeconds(int ticks) {
+    if (ticks % TICKS_PER_SECOND == 0) {
+      return (ticks / TICKS_PER_SECOND) + "s";
+    }
+    return String.format("%.1fs", ticks / (float) TICKS_PER_SECOND);
   }
 
   @Override

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#c#"
+  ],
+  "key": {
+    "#": {      "item": "minecraft:stick"    },
+    "c": {      "item": "minecraft:chest"    }
+  },
+  "result": {
+    "item": "rackofdrying:drying_rack",
+    "count": 1
+  }
+}

@@ -1,6 +1,0 @@
-{
-  "type": "rackofdrying:drying",
-  "input": { "item": "minecraft:tipped_arrow" },
-  "result": { "item": "minecraft:arrow" },
-  "time": 200
-}

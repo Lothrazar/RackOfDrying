@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "item": "minecraft:beetroot" },
+  "result": { "item": "minecraft:sugar"  },
+  "time": 1400
+}

@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "item": "minecraft:lead" },
+  "result": { "item": "minecraft:string","count": 3 },
+  "time": 300
+}

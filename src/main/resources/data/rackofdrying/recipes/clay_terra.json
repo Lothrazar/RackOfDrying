@@ -1,0 +1,6 @@
+{
+  "type": "rackofdrying:drying",
+  "input": { "item": "minecraft:clay" },
+  "result": { "item": "minecraft:terracotta" },
+  "time": 200
+}
