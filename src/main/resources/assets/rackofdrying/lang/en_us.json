@@ -1,5 +1,6 @@
 {
   "block.rackofdrying.drying_rack": "Drying Rack",
+  "block.rackofdrying.drying_rack.tooltip": "Converts items to dried out versions based on its known recipes",
   "block.rackofdrying.thatch": "Thatch",
   "block.rackofdrying.thatch_stairs": "Thatch Stairs",
   "block.rackofdrying.thatch_slab": "Thatch Slab",

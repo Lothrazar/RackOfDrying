@@ -143,6 +143,7 @@ dependencies {
 
 
     //optional integrations
+    runtimeOnly fg.deobf("curse.maven:appleskin-248787:4770828")
      
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
